@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Servidor TaxasCâmbio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>API Taxas de Câmbio da moeda brasileira</h1>
+        <h2>REST service</h2>
+        <h2>JSON data</h2>
+        <hr>
+        <p><i>URL: </i>
+                http://localhost:8084/ServidorPDM/TaxasCambio?moeda=<b>K</b>&amp;operacao=<b>X</b>
+        </p>
+        <p><b>K</b> = informar o símbolo da moeda de um país (de acordo com a ISO-4217)</p>
+        <p><b>X</b> = informar o identificador da função desejada (consultar a lista de funções)</p>
+        <hr>
+        <h2>Exemplo</h2>
+        <p><i>URL: </i>
+            <a href="http://127.0.0.1:8084/ServidorPDM/TaxasCambio?moeda=usd&operacao=cotacao">
+                http://127.0.0.1:8084/ServidorPDM/TaxasCambio?moeda=<b>usd</b>&amp;operacao=<b>cotacao</b></a>
+        </p>
+        <h2>Resultado</h2>
+        <pre>
+{
+    "taxa":{
+        "compra":3.7380,
+        "venda":3.7386
+    },
+    "paridade":{
+        "compra":1.0000,
+        "venda":1.0000
+    },
+    "moeda":{
+        "codigo":220,
+        "tipo":"A",
+        "nome":"Dolar dos EUA"
+        },
+    "pais":{
+        "codigo":2496,
+        "nome":"Estados Unidos"
+    }
+}
+        </pre>
+        <hr>
+        <h2>Lista de Funções</h2>
+        <ol>
+            <li>cotacao</li>
+            <li>historico</li>
+            <li></li>
+            <li></li>
+        </ol>
+        <hr>
+        <h2>Tecnologias utilizadas:</h2>
+        <ul>
+            <li>OpenCSV&reg;</li>
+            <li>Java&reg;</li>
+            <li>Tomcat&reg;</li>
+        </ul>
+    </body>
+</html>
