@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class ParserCsv {
 
-    public static String json;
     private String filePathCotacao;
     private String filePathMoedas;
     private FileReader fileReaderCotacao;
@@ -37,6 +36,7 @@ public class ParserCsv {
         allRowsCotacao = csvReaderCotacao.readAll();
         allRowsMoedas = csvReaderMoedas.readAll();
         csvToJson();
+        csvToString(); // apenas para testar localmente
     }
 
     /**
@@ -57,7 +57,7 @@ public class ParserCsv {
     }
 
     private void csvToJson() {
-        json = "";
+        String json = "";
         for (String[] rowCotacao : allRowsCotacao) {
             for (String columnCotacao : rowCotacao) {
                 json = json.concat(columnCotacao);
@@ -92,14 +92,12 @@ public class ParserCsv {
     }
 
     /**
-     * metodo Main facultativo, usado apenas para testar localmente
+     * metodo Main executa o construtor da Classe ParserCsv
      *
      * @param args
      * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         ParserCsv parserCsv = new ParserCsv();
-        parserCsv.csvToString();
-//        System.out.println(ParserCsv.json);
     }
 }

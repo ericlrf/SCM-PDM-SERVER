@@ -3,6 +3,8 @@ package servidor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import javax.json.Json;
+import javax.json.JsonObject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +20,26 @@ public class TaxasCambio extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.print(ParserCsv.json);
+            out.print("{\n" +
+"    \"taxa\":{\n" +
+"        \"compra\":3.7380,\n" +
+"        \"venda\":3.7386\n" +
+"    },\n" +
+"    \"paridade\":{\n" +
+"        \"compra\":1.0000,\n" +
+"        \"venda\":1.0000\n" +
+"    },\n" +
+"    \"moeda\":{\n" +
+"        \"codigo\":220,\n" +
+"        \"tipo\":\"A\",\n" +
+"        \"nome\":\"Dolar dos EUA\"\n" +
+"        },\n" +
+"    \"pais\":{\n" +
+"        \"codigo\":2496,\n" +
+"        \"nome\":\"Estados Unidos\"\n" +
+"    }\n" +
+"}\n" +
+"");
         }
         System.out.println("-> o host {" + request.getRemoteHost() + "} fez a requisição {" + request.getQueryString() + "} em {" + new Date(System.currentTimeMillis()) + "} <-");
     }

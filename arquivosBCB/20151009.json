@@ -1,0 +1,19 @@
+{
+    "taxa":{
+        "compra":3.7380,
+        "venda":3.7386
+    },
+    "paridade":{
+        "compra":1.0000,
+        "venda":1.0000
+    },
+    "moeda":{
+        "codigo":220,
+        "tipo":"A",
+        "nome":"Dolar dos EUA"
+        },
+    "pais":{
+        "codigo":2496,
+        "nome":"Estados Unidos"
+    }
+}
